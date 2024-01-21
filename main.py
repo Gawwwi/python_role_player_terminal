@@ -36,8 +36,8 @@ while True:
             if number_potion_health < 0: #plus de potion
 
                 print("Vous n'avez plus de potions")
-                next_level = False
                 print(INTER_LIGNE)
+                next_level = False
                 up_round = False
                 break
 
