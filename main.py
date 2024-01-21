@@ -3,12 +3,12 @@ import sys
 
 health_player = 50
 health_ennemy = 50
-inter_ligne = ("-" * 50)
-next_level = False
 number_potion_health = 3
+next_level = False
 up_round = False
+INTER_LIGNE = ("-" * 50)
 
-print(inter_ligne)
+print(INTER_LIGNE)
 
 while True:
 
@@ -37,7 +37,7 @@ while True:
 
                 print("Vous n'avez plus de potions")
                 next_level = False
-                print(inter_ligne)
+                print(INTER_LIGNE)
                 up_round = False
                 break
 
@@ -52,7 +52,7 @@ while True:
             else: #gestion erreur
 
                 print("Veuillez entrer un choix valide")
-                print(inter_ligne)
+                print(INTER_LIGNE)
                 next_level = False
                 up_round = False
                 break
@@ -60,7 +60,7 @@ while True:
         else: #gestion erreur
 
             print("Veuillez entrer un choix valide")
-            print(inter_ligne)
+            print(INTER_LIGNE)
             next_level = False
             up_round = False
             break
@@ -71,7 +71,7 @@ while True:
         print(f"L'ennemi vous a infligé {attack_ennemy} points de dégats")
         print(f"Il vous reste {health_player} points de vie.")
         print(f"Il reste {health_ennemy} points de vie a l'ennemi.")
-        print(inter_ligne)
+        print(INTER_LIGNE)
 
     if up_round == True: #Quand potion utilisé
 
@@ -80,7 +80,7 @@ while True:
         print(f"L'ennemi vous a infligé {attack_ennemy} points de dégats")
         print(f"Il vous reste {health_player} points de vie.")
         print(f"Il reste {health_ennemy} points de vie a l'ennemi.")
-        print(inter_ligne)
+        print(INTER_LIGNE)
         up_round = False
 
     if health_ennemy <= 0: #WIN
