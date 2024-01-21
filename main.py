@@ -12,7 +12,7 @@ print(inter_ligne)
 
 while True:
 
-    potion_helth = random.randint(15, 20)
+    potion_health = random.randint(15, 50)
     attack_player = random.randint(5, 10)
     attack_ennemy = random.randint(5, 15)
 
@@ -33,7 +33,7 @@ while True:
         elif user_choice == "2": #potion
             number_potion_health = number_potion_health - 1
 
-            if number_potion_health < 0:
+            if number_potion_health < 0: #plus de potion
 
                 print("Vous n'avez plus de potions")
                 next_level = False
@@ -41,10 +41,10 @@ while True:
                 up_round = False
                 break
 
-            elif number_potion_health >= 0 :
+            elif number_potion_health >= 0: #utilisation potion
 
-                health_player = health_player + potion_helth
-                print(f"Vous récupérez {potion_helth} points de vie ({number_potion_health} restantes)")
+                health_player = health_player + potion_health
+                print(f"Vous récupérez {potion_health} points de vie ({number_potion_health} restantes)")
                 next_level = True
                 up_round = True
                 break
@@ -65,7 +65,7 @@ while True:
             up_round = False
             break
 
-    if next_level == True :
+    if next_level == True: #Passez au prochain niveau
 
         health_player = health_player - attack_ennemy
         print(f"L'ennemi vous a infligé {attack_ennemy} points de dégats")
@@ -73,7 +73,7 @@ while True:
         print(f"Il reste {health_ennemy} points de vie a l'ennemi.")
         print(inter_ligne)
 
-    if up_round == True:
+    if up_round == True: #Quand potion utilisé
 
         health_player = health_player - attack_ennemy
         print("Vous passez votre tour ...")
@@ -82,3 +82,13 @@ while True:
         print(f"Il reste {health_ennemy} points de vie a l'ennemi.")
         print(inter_ligne)
         up_round = False
+
+    if health_ennemy <= 0: #WIN
+        print("Vous avez gagné")
+        print("Fin du jeu.")
+        sys.exit(0)
+    
+    elif health_player <= 0: #LOOSE
+        print("Tu as perdu")
+        print("Fin du jeu.")
+        sys.exit(0)
