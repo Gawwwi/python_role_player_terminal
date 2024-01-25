@@ -9,6 +9,7 @@ up_round = False
 INTER_LIGNE = ("-" * 50)
 
 print(INTER_LIGNE)
+print("test")
 
 while True:
 
