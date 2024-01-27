@@ -7,10 +7,33 @@ number_potion_health = 3
 next_level = False
 up_round = False
 relaunch_s = False
+start = True
 INTER_LIGNE = ("-" * 50)
 
-print(INTER_LIGNE)
 
+
+def launch(start, INTER_LIGNE):
+
+    while True:
+        print(INTER_LIGNE)
+        start_choice = input("Voulez vous lancer le jeu ?\nEntrer 1 pour jouer, ou 2 pour ne pas jouer : ")
+        
+        while start == True:
+
+            if start_choice == "1":
+                print("Vous lancez le jeu.")
+                print(INTER_LIGNE)
+                game(health_player, health_ennemy, number_potion_health, next_level, up_round, relaunch_s, INTER_LIGNE)
+
+            elif start_choice == "2":
+                print(INTER_LIGNE)
+                print("Vous ne voulez pas lancer le jeu.")
+                print(INTER_LIGNE)
+                sys.exit(0)
+
+            else:
+                print("Veuillez entrer un choix valide.")
+                break
 
 def regle (INTER_LIGNE):
     print("""Voici les règles du jeu : 
@@ -148,5 +171,4 @@ def game(health_player, health_ennemy, number_potion_health, next_level, up_roun
             relaunch(relaunch_s, INTER_LIGNE)
 
 
-regle(INTER_LIGNE)
-game(health_player, health_ennemy, number_potion_health, next_level, up_round, relaunch_s, INTER_LIGNE)
+launch(start, INTER_LIGNE)
